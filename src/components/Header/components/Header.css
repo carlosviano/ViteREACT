@@ -1,0 +1,29 @@
+.Menu{
+    display: flex;
+    width:100%;
+    border-bottom:solid 1px grey;
+    max-height: 32px;
+}
+
+a.logo-name {
+    padding-right: 16px;
+    font-size:20px;
+}
+
+.Menu-derecha{
+display:flex;
+width:50%;
+padding:16px;
+padding-bottom:0px;
+justify-content: flex-end;
+align-items: flex-end;
+}
+
+.Menu-izquierda{ 
+    display:flex;
+    width:50%;
+    padding:16px;
+    padding-bottom:0px;
+    justify-content: flex-start;
+    align-items: flex-end;
+}

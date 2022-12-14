@@ -1,0 +1,33 @@
+.footer{
+    bottom:0;
+    left:0;
+    background-color:rgb(128 128 128 / 8%);
+    border-top:solid 0,03px black;
+    width:100%;
+    transition:all 0,3s;
+}
+
+.footer ul{
+    padding: 24px;
+    width:25%;
+}
+
+.footer ul li a:hover{
+    padding-left:8px;
+}
+
+.enlaces{
+Display:flex;
+padding:16px;
+}
+
+.enlaces a{
+    text-decoration:none;
+    cursor: pointer;
+}
+
+.enlaces li{
+list-style:none;
+padding:8px;
+margin:8px;
+}

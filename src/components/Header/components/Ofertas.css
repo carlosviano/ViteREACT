@@ -1,0 +1,9 @@
+.ofertasBanner{ 
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: white;
+    height: 24px;
+    padding: 2px;
+}
+
