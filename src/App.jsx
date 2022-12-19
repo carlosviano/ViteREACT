@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App"> 
     <Ofertas text="Free shipping inside Europe"/>
-    <Header shopName="Uniform Display" one="All" two="About" three="Search" four="Account" five="Cart:" six="0" />
+    <Header/>
     <Footer/>
     </div>
   )
