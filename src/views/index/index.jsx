@@ -1,5 +1,6 @@
 import './index.css';
 
+
 export default function Index({i,i2,i3,i4,i5}) {
   return (
     <main>
