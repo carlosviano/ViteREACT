@@ -1,16 +1,13 @@
 import './button.css'
 import { useState } from 'react'
 
-export default function Button( ){
-    const [isChanged,setIsChanged] = useState(false);
-    function toggleIsChanged(){
-        setIsChanged(!isChanged)
-    }
+export default function Button({setIsShown}){
 
     return(
         <>
-        <p>El titulo esta {isChanged ? "Hola" : "Adios"}</p>
-        <button onClick={toggleIsChanged}>Saludar</button>
+        <button onClick={() => setIsShown("Hola")}>Borrar producto</button>
         </>
     )
-}
+    }
+
+

@@ -1,3 +1,5 @@
+import Lista from "@/components/Lista/Lista"
+
 export default function Cart(){
-    return <p>You are in cart</p>
+    return <Lista/>
 }

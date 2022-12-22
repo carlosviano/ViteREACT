@@ -1,3 +1,5 @@
+import Button from "@/components/button/button"
+
 export default function Account(){
-    return <p>You are in Account</p>
+    return (<Button/>)
 }

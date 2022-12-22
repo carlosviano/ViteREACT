@@ -1,6 +1,6 @@
 import './Header.css';
 import { leftMenu } from '../../../const/leftMenu';
-import Button from '../../Button/button'
+import Button from '../../Button/Button'
 import { Link } from 'react-router-dom';
 import { rightMenu } from '../../../const/rightMenu';
 
@@ -9,7 +9,6 @@ export default function Header(){
     return (
         <div className="Menu"> 
         <div className="Menu-izquierda">
-            <Button/>
             {leftMenu.map((leftMenuItem,index) => (
           <Link to={leftMenuItem.path} className={leftMenuItem.className} key={index}>{leftMenuItem.label}</Link>
 
