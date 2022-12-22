@@ -1,14 +1,18 @@
-import './index.css';
+import './Home.css';
+import i from './images/bottoms.png';
+import i2 from './images/tees.png'
+import i3 from './images/tops.png'
+import i4 from './images/shoes.png'
+import i5 from './images/destacados.jpg'
 
-
-export default function Index({i,i2,i3,i4,i5}) {
+export default function Home() {
   return (
     <main>
       <div className="container-arriba">
         <div className="imagen-izq-arriba">
           <img
             className="imagen-img"
-            src= {i}
+            src={i}
             alt="Bottoms"
           />
           <div className="imagen-contenido">

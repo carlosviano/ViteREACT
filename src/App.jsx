@@ -1,10 +1,11 @@
-import Index from './views/index/index'
+import Index from './views/Home/Home'
+import All from './views/allProducts/All'
+import About from './views/about/about'
 import Layout from './components/Layout/Layout'
-import i from './views/index/images/bottoms.png'
-import i2 from './views/index/images/tees.png'
-import i3 from './views/index/images/tops.png'
-import i4 from './views/index/images/shoes.png'
-import i5 from './views/index/images/destacados.jpg'
+import Search from './views/Search/Search'
+import Account from './views/Account/Account'
+import Cart from './views/Cart/Cart'
+
 
 import {
   BrowserRouter,
@@ -21,7 +22,13 @@ function App() {
     <BrowserRouter>  
     <Routes> 
       <Route path="/" element={<Layout/>}>
-       <Route index element={<Index i={i} i2={i2} i3={i3} i4={i4} i5={i5}/>}/>
+       <Route index element={<Index/>}/>
+       <Route path="all" element={<All/>}/>
+       <Route path="about" element={<About/>}/>
+       <Route path="search" element={<Search/>}/>
+       <Route path="account" element={<Account/>}/>
+       <Route path="cart" element={<Cart/>}/>
+
       </Route> 
     </Routes>
     </BrowserRouter>

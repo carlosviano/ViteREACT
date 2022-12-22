@@ -1,18 +1,24 @@
 import './Header.css';
-import { homeMenu } from '../../../const/homeMenu.js';
+import { leftMenu } from '../../../const/leftMenu';
+import Button from '../../Button/button'
+import { Link } from 'react-router-dom';
+import { rightMenu } from '../../../const/rightMenu';
+
 
 export default function Header(){
     return (
         <div className="Menu"> 
         <div className="Menu-izquierda">
-            {/* <Link className="logo-name" to={homeMenu.path} >Uniform Display</Link> */}
-            <a className="button" href="#">All</a>
-            <a href="#" target="_blank" className="button">About</a>
+            <Button/>
+            {leftMenu.map((leftMenuItem,index) => (
+          <Link to={leftMenuItem.path} className={leftMenuItem.className} key={index}>{leftMenuItem.label}</Link>
+
+           ))}
+            
         </div>
         <div className="Menu-derecha">
-                <a className="button" href="Main Search.html" target="_blank">Search</a>
-                <a className="button" href="#">Account</a>
-                <a className="button" href="#">Cart:<span>0</span></a>
+        {rightMenu.map((rightMenuItem,index) => 
+            <Link to={rightMenuItem.path} className={rightMenuItem.className} key={index}>{rightMenuItem.label}<span>{rightMenuItem.number}</span></Link>)}   
 </div>
         </div>
     )
