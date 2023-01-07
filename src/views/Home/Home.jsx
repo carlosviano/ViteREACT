@@ -62,7 +62,7 @@ export default function Home() {
         </div>
       </div>
       <div className="imagen-destacados">
-            <img className="imagen-img" src={i5}/>
+            {/* <img className="imagen-img" src={i5}/> */}
             <div className="imagen-contenido">
                 <div className="destacados-titulo"><a href="#">Featured</a></div>
             </div>

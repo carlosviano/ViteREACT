@@ -1,7 +1,7 @@
 .container-arriba,.container-abajo{
     display:flex;
     width:100%;
-    justify-content: space-evenly;
+    justify-content: center;
     padding:32px;
 }
 
@@ -10,16 +10,19 @@
     width:300px;
     display:flex;
     border: 0.1px solid black;
+    margin: 24px;
     }
     
 
 .imagen-destacados{
+        width:50%;
         position:relative;
         max-width:100%;
-        margin:16px;
-        max-height:200px;
+        margin:0 auto;
+        height:200px;
         display:flex;
         border: 0.1px solid black;
+        background-image: url(./images/destacados.jpg);
     }
       
     
