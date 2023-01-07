@@ -53,11 +53,11 @@ export default function Cart() {
             <div className="cartProductImage">
               <img
                 alt="Imagen"
-                src="https://cdn.shopify.com/s/files/1/0286/5954/8213/products/satan-1.jpg?v=1575937493"
+                src="https://cdn.shopify.com/s/files/1/0286/5954/8213/products/vintage_unsound-13copy_720x.jpg?v=1672947714"
               />
             </div>
             <div className="cartProductName">
-              <h6>Black shirt</h6>
+              <h6>Black Pants</h6>
             </div>
           </div>
           <div className="cartMiddleGroup">
@@ -81,7 +81,7 @@ export default function Cart() {
       <div className="cartCheckoutContainer">
         <div className="cartCheckoutContent">
           <div className="checkoutTitle">
-            <h6>Subtotal: 59.00$</h6>
+            <h6>Subtotal: 118.00$</h6>
           </div>
           <div className="checkoutText">
             <h6>Taxes and shipping calculated at checkout</h6>
