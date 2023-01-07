@@ -1,11 +1,10 @@
 import './button.css'
-import { useState } from 'react'
 
-export default function Button({setIsShown}){
+export default function Button({value}){
 
     return(
         <>
-        <button onClick={() => setIsShown("Hola")}>Borrar producto</button>
+        <input type='submit' class='btn' value={value}/>
         </>
     )
     }

@@ -5,14 +5,9 @@
     padding:32px;
 }
 
-.container-abajo{
-    justify-content: space-between;
-
-}
-
 .imagen-izq-arriba, .imagen-derecha-arriba, .imagen-derecha-abajo, .imagen-izq-abajo{
     position:relative;
-    width:500px;
+    width:300px;
     display:flex;
     border: 0.1px solid black;
     }
@@ -22,7 +17,7 @@
         position:relative;
         max-width:100%;
         margin:16px;
-        max-height:500px;
+        max-height:200px;
         display:flex;
         border: 0.1px solid black;
     }
@@ -58,7 +53,7 @@
 
   .bottoms-titulo a, .tees-titulo a, .shoes-titulo a, .tops-titulo a,.destacados-titulo a{
     width:100%;
-        font-size:32px;
+        font-size:24px;
         text-decoration: none;
         color:black;
     }

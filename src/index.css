@@ -9,12 +9,12 @@ body{
 }
 
 
-h1{font: size 28.83px;;}
-h2{font-size:25.63px ;}
-h3{font-size:22.78px ;}
-h4{font-size:20.25px ;}
-h5{font-size:18px ;}
-h6,p{font-size:16px ;}
+h1{font-size:37.50px;;}
+h2{font-size:30px ;}
+h3{font-size:24px ;}
+h4{font-size:19.20px ;}
+h5{font-size:15.36px ;}
+h6,p{font-size:12.29px ;}
 
 *{
     Margin:0;
@@ -34,13 +34,13 @@ padding-bottom:0px;
 }
 
 .Menu{
-    font-weight:650
+    font-weight:560
 }
 
 a{
     text-decoration:none;
     color:black;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 

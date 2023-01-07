@@ -1,6 +1,6 @@
 import Index from './views/Home/Home'
 import All from './views/allProducts/All'
-import About from './views/about/about'
+import About from './views/About/AboutUs'
 import Layout from './components/Layout/Layout'
 import Search from './views/Search/Search'
 import Account from './views/Account/Account'
@@ -28,7 +28,6 @@ function App() {
        <Route path="search" element={<Search/>}/>
        <Route path="account" element={<Account/>}/>
        <Route path="cart" element={<Cart/>}/>
-
       </Route> 
     </Routes>
     </BrowserRouter>

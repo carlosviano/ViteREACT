@@ -1,0 +1,65 @@
+.mainContainer{
+    display:flex;
+    height:600px;
+}
+
+.login{
+    width:100%;
+    display: flex;
+    align-items: center;
+}
+
+.login .formLogin {
+    margin: auto;
+}
+
+.login .formLogin h5{
+display:flex;
+justify-content: center;
+padding:24px;
+}
+
+.login .formLogin .inputContainer {
+    height:48px;
+}
+
+.register{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register .formRegister h5 {
+    display: flex;
+    justify-content: center;
+    padding: 24px;}
+
+.register .formRegister .inputContainer {
+    height:48px;
+    }
+
+input.loginInput {
+        padding: 4px;
+        width: 240px;}
+        
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.formRegister{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+
+input.registerInput {
+        padding: 4px;
+        width: 240px;}
+
+.inputContainer{
+    margin:8px;
+}

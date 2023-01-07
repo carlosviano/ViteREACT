@@ -1,3 +1,4 @@
+import Button from "../Button/button";
 import "./Footer.css";
 
 export default function Footer() {
@@ -34,11 +35,13 @@ export default function Footer() {
         </ul>
       </div>
       <div className="footer-right">
-                <div className="footer-newsletter">
-                    <label className="newsletter-label" htmlFor="newsletter-email">Newsletter</label>
-                    <input type="text" className="newsletter-email" placeholder="Email" name="newsletter-email" id="newsletter-email"/>
-                    <input type="submit" className="submit-mail" value="Subscribe"/>
-                </div>
+      <div className='newsletter'>
+            <div className='newsletterInputContainer'>
+                <h6>Sign up for our newsletter for exclusive promos</h6>
+                <input type='text' className='newsletterInput' placeholder='Enter email...'/>
+                <Button value='Sign Up'/>
+            </div>
+            </div>
                 <div className="redes"> 
                     <a href="#"><i className="bi bi-instagram"></i></a>
                     <a href="#"><i className="bi bi-facebook"></i></a>

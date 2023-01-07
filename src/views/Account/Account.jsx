@@ -1,5 +1,7 @@
-import Button from "@/components/button/button"
+import Login from '../Login/Login'
 
 export default function Account(){
-    return (<Button/>)
+    return (
+        <Login/>
+    )
 }
