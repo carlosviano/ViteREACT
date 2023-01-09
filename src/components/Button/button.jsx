@@ -4,7 +4,7 @@ export default function Button({value}){
 
     return(
         <>
-        <input type='submit' class='btn' value={value}/>
+        <input type='submit' className='btn' value={value}/>
         </>
     )
     }
