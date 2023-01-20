@@ -5,6 +5,7 @@ import Layout from './components/Layout/Layout'
 import Search from './views/Search/Search'
 import Account from './views/Account/Account'
 import Cart from './views/Cart/Cart'
+import { LoginContextProvider } from './contexts/LoginModeContext'
 
 
 import {
@@ -19,6 +20,7 @@ import {
 
 function App() {
   return (
+    <LoginContextProvider>
     <BrowserRouter>  
     <Routes> 
       <Route path="/" element={<Layout/>}>
@@ -31,6 +33,7 @@ function App() {
       </Route> 
     </Routes>
     </BrowserRouter>
+    </LoginContextProvider>
   )
 }
 

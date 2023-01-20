@@ -2,9 +2,12 @@ import Button from '../Button/button'
 import './Login.css'
 import {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLoginContext } from '../../contexts/LoginModeContext';
 
 
 export default function Login(){
+
+    const {logInAcc} = useLoginContext()
 
     const  [newUser, setNewUser] = useState({
         email:"",
@@ -52,8 +55,6 @@ export default function Login(){
         email:"",
         password:""
     })
-    
-    const navigate = useNavigate();
 
     function handleLogInInput(e){
         const newLogIn = {
@@ -63,38 +64,12 @@ export default function Login(){
         setNewUserLogin(newLogIn)
     }
 
-    function logInAcc(e){
-        console.log(newUserLogin)
-        e.preventDefault();
-        fetch('http://localhost:3000/user/login',{
-            method: 'POST', 
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(newUserLogin)
-        }).then((response) => {
-            console.log(response.status);
-            if(response.status === 400){
-                alert('Error al recibir el body')
-            } else if(response.status === 200){
-                alert('Te has logeado correctamente');
-                setNewUserLogin({
-                    email:"",
-                    password:""
-                })
-                navigate('/')
-            } else if( response.status === 404){
-                alert('Usuario no registrado')
-            } else if(response.status === 401){
-                alert('Usuario o password incorrectas')
-            }
-        })
-    }
-
 
 
     return (    
         <div className='mainContainer'> 
         <div className='login'>
-        <form className='formLogin' onSubmit={logInAcc}>
+        <form className='formLogin' onSubmit={(e)=> logInAcc(e,newUserLogin)}>
             <h5>Login</h5>
             <div className='inputContainer'>
                 <h6>Email</h6>
