@@ -2,7 +2,7 @@ import Button from '../Button/button'
 import './Login.css'
 import {useState} from 'react';
 import { useLoginContext } from '../../contexts/LoginModeContext';
-
+import jwt_decode from 'jwt-decode';
 
 export default function Login(){
 

@@ -1,7 +1,12 @@
 import Login from '../../components/Login/Login'
+import LogOut from '../../components/LogOut/LogOut'
+import { useLoginContext } from '../../contexts/LoginModeContext'
+
 
 export default function Account(){
-    return (
-        <Login/>
-    )
+
+const {authorization} = useLoginContext();
+
+return (<>{authorization === null ? <Login/> : <LogOut/>}</>)
+
 }

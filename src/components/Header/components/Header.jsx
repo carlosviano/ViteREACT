@@ -7,7 +7,7 @@ import { rightMenuLoggedIn } from "../../../const/rightMenuLoggedIn";
 
 export default function Header() {
   const { authorization } = useLoginContext();
-
+  console.log(authorization)
   return (
     <div className="Menu">
       <div className="Menu-izquierda">

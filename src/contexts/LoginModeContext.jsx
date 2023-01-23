@@ -1,11 +1,10 @@
 import { createContext, useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const loginContext = createContext({
     authorization:null,
     newUserLogin: null,
     logInAcc: () => {},
-    logoutAcc: () => {},
+    logOutAcc: () => {},
 })
 
 export default loginContext;
@@ -32,7 +31,8 @@ export function LoginContextProvider({children},newUserLogin){
             alert("Email o password incorrectos");
           }
     }
-    function logOut(){
+
+    function logOutAcc(){
         window.localStorage.removeItem(MY_AUTH_APP)
         setAuthorization(null)
     }
@@ -40,7 +40,9 @@ export function LoginContextProvider({children},newUserLogin){
 
     const value = {
         newUserLogin,
-        logInAcc
+        logInAcc,
+        authorization,
+        logOutAcc
     }
 
     return (
