@@ -1,6 +1,8 @@
 import { createContext, useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const loginContext = createContext({
+    authorization:null,
     newUserLogin: null,
     logInAcc: () => {},
     logoutAcc: () => {},
@@ -8,28 +10,33 @@ const loginContext = createContext({
 
 export default loginContext;
 
+const MY_AUTH_APP = 'MY_AUTH_APP'
+
 export function LoginContextProvider({children},newUserLogin){
 
-    function logInAcc(e,newUserLogin) {
+   const [authorization, setAuthorization] = useState(window.localStorage.getItem(MY_AUTH_APP) ?? null)
+
+   async function logInAcc(e,newUserLogin) {
         console.log(newUserLogin)
         e.preventDefault();
-        fetch('http://localhost:3000/user/login',{
+       const response = await fetch('http://localhost:3000/user/login',{
             method: 'POST', 
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newUserLogin)
-        }).then((response) => {
-            console.log(response.status);
-            if(response.status === 400){
-                alert('Error al recibir el body')
-            } else if(response.status === 200){
-                alert('Te has logeado correctamente');
-            } else if( response.status === 404){
-                alert('Usuario no registrado')
-            } else if(response.status === 401){
-                alert('Usuario o password incorrectas')
-            }
         })
+        if (response.status === 200) {
+            const token = await response.json();
+            setAuthorization(token)
+            window.localStorage.setItem(MY_AUTH_APP,token.jwt)
+          } else {
+            alert("Email o password incorrectos");
+          }
     }
+    function logOut(){
+        window.localStorage.removeItem(MY_AUTH_APP)
+        setAuthorization(null)
+    }
+    console.log(authorization)
 
     const value = {
         newUserLogin,
