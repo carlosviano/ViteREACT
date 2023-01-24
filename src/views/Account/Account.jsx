@@ -7,6 +7,6 @@ export default function Account(){
 
 const {authorization} = useLoginContext();
 
-return (<>{authorization === null ? <Login/> : <LogOut/>}</>)
+return (<>{authorization.role === null ? <Login/> : <LogOut/>}</>)
 
 }

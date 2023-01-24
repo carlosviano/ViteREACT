@@ -18,7 +18,6 @@ import {
 
 function App() {
   return (
-    <BrowserRouter> 
     <Routes> 
       <Route path="/" element={<Layout/>}>
        <Route index element={<Index/>}/>
@@ -29,7 +28,6 @@ function App() {
        <Route path="cart" element={<Cart/>}/>
       </Route> 
     </Routes>
-    </BrowserRouter>
   )
 }
 

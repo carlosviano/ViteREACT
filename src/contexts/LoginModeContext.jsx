@@ -1,7 +1,12 @@
 import { createContext, useContext, useState } from "react";
+import jwtDecode from "jwt-decode";
+
 
 const loginContext = createContext({
-    authorization:null,
+    authorization:{
+        jwt: null,
+        role:null,
+    },
     newUserLogin: null,
     logInAcc: () => {},
     logOutAcc: () => {},
@@ -13,7 +18,10 @@ const MY_AUTH_APP = 'MY_AUTH_APP'
 
 export function LoginContextProvider({children},newUserLogin){
 
-   const [authorization, setAuthorization] = useState(window.localStorage.getItem(MY_AUTH_APP) ?? null)
+   const [authorization, setAuthorization] = useState(window.localStorage.getItem(MY_AUTH_APP) ?? {
+    jwt: null,
+    role: null,
+   })
 
    async function logInAcc(e,newUserLogin) {
         console.log(newUserLogin)
@@ -25,7 +33,8 @@ export function LoginContextProvider({children},newUserLogin){
         })
         if (response.status === 200) {
             const token = await response.json();
-            setAuthorization(token)
+            setAuthorization(jwtDecode(token.jwt))
+            console.log(authorization)
             window.localStorage.setItem(MY_AUTH_APP,token.jwt)
           } else {
             alert("Email o password incorrectos");
@@ -34,7 +43,10 @@ export function LoginContextProvider({children},newUserLogin){
 
     function logOutAcc(){
         window.localStorage.removeItem(MY_AUTH_APP)
-        setAuthorization(null)
+        setAuthorization({
+            jwt:null,
+            role:null,
+        })
     }
     console.log(authorization)
 

@@ -22,7 +22,7 @@ export default function Header() {
         ))}
       </div>
       <div className="Menu-derecha">
-        {authorization === null
+        {authorization.role === null
           ? rightMenu.map((rightMenuItem, index) => (
               <Link
                 to={rightMenuItem.path}
