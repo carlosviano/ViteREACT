@@ -2,8 +2,8 @@ import './Search.css'
 
 export default function Search(){
     return (
-        <div class="container-buscador">
-        <input type="Search" class="item-search" Placeholder="Search..."/>
+        <div className="container-buscador">
+        <input type="Search" className="item-search" placeholder='Search...'/>
             <a href="Index.html"></a>
         </div>
     )

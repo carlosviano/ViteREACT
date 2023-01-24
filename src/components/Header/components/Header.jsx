@@ -4,14 +4,22 @@ import { Link } from "react-router-dom";
 import { rightMenu } from "../../../const/rightMenu";
 import { useLoginContext } from "../../../contexts/LoginModeContext";
 import { rightMenuLoggedIn } from "../../../const/rightMenuLoggedIn";
+import { leftMenuLoggedIn } from "../../../const/leftMenuLoggedIn";
 
 export default function Header() {
   const { authorization } = useLoginContext();
-  console.log(authorization)
   return (
     <div className="Menu">
       <div className="Menu-izquierda">
-        {leftMenu.map((leftMenuItem, index) => (
+        {authorization.role !== null ? leftMenuLoggedIn.map((leftMenuItem, index) => (
+          <Link
+            to={leftMenuItem.path}
+            className={leftMenuItem.className}
+            key={index}
+          >
+            {leftMenuItem.label}
+          </Link>
+        )) : leftMenu.map((leftMenuItem, index) => (
           <Link
             to={leftMenuItem.path}
             className={leftMenuItem.className}

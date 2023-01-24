@@ -4,6 +4,7 @@
 import "./card.css";
 
 export default function Card({i,i2, altText, title,size,price}) {
+
   return (
      <div className='containerBlock'>
       <div className="container">

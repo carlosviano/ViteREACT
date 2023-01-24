@@ -18,13 +18,12 @@ const MY_AUTH_APP = 'MY_AUTH_APP'
 
 export function LoginContextProvider({children},newUserLogin){
 
-   const [authorization, setAuthorization] = useState(window.localStorage.getItem(MY_AUTH_APP) ?? {
-    jwt: null,
+   const [authorization, setAuthorization] = useState(JSON.parse(window.localStorage.getItem(MY_AUTH_APP)) ?? {
+    email: null,
     role: null,
    })
 
    async function logInAcc(e,newUserLogin) {
-        console.log(newUserLogin)
         e.preventDefault();
        const response = await fetch('http://localhost:3000/user/login',{
             method: 'POST', 
@@ -34,12 +33,12 @@ export function LoginContextProvider({children},newUserLogin){
         if (response.status === 200) {
             const token = await response.json();
             setAuthorization(jwtDecode(token.jwt))
-            console.log(authorization)
-            window.localStorage.setItem(MY_AUTH_APP,token.jwt)
+            window.localStorage.setItem(MY_AUTH_APP,JSON.stringify(jwtDecode(token.jwt)))
           } else {
             alert("Email o password incorrectos");
           }
     }
+    console.log(authorization)
 
     function logOutAcc(){
         window.localStorage.removeItem(MY_AUTH_APP)
@@ -48,7 +47,6 @@ export function LoginContextProvider({children},newUserLogin){
             role:null,
         })
     }
-    console.log(authorization)
 
     const value = {
         newUserLogin,

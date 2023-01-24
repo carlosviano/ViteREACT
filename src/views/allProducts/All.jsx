@@ -5,17 +5,9 @@ import image2 from '../../components/Card/images/adios.jpg'
 
 
 export default function All(){
+
     return(
         <div className='allMainContainer'>
-         <Card i={image} i2={image2} altText={image} title={'Single Stitched Monroe County Tee - 1990s'} size={'Size: Large'} price={'$55.00'}  />
-         <Card i={image} i2={image2} altText={image} title={'Single Stitched Monroe County Tee - 1990s'} size={'Size: Large'} price={'$55.00'}  />
-         <Card i={image} i2={image2} altText={image} title={'Single Stitched Monroe County Tee - 1990s'} size={'Size: Large'} price={'$55.00'}  />
-         <Card i={image} i2={image2} altText={image} title={'Single Stitched Monroe County Tee - 1990s'} size={'Size: Large'} price={'$55.00'}  />
-         <Card i={image} i2={image2} altText={image} title={'Single Stitched Monroe County Tee - 1990s'} size={'Size: Large'} price={'$55.00'}  />
-         <Card i={image} i2={image2} altText={image} title={'Single Stitched Monroe County Tee - 1990s'} size={'Size: Large'} price={'$55.00'}  />
-         <Card i={image} i2={image2} altText={image} title={'Single Stitched Monroe County Tee - 1990s'} size={'Size: Large'} price={'$55.00'}  />
-         <Card i={image} i2={image2} altText={image} title={'Single Stitched Monroe County Tee - 1990s'} size={'Size: Large'} price={'$55.00'}  />
-         <Card i={image} i2={image2} altText={image} title={'Single Stitched Monroe County Tee - 1990s'} size={'Size: Large'} price={'$55.00'}  />
          <Card i={image} i2={image2} altText={image} title={'Single Stitched Monroe County Tee - 1990s'} size={'Size: Large'} price={'$55.00'}  />
           </div>
     )

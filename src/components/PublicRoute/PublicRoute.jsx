@@ -5,7 +5,7 @@ export default function PublicRoute(){
     const {authorization} = useLoginContext()
     const location = useLocation()
 
-    if(authorization.jwt){
+    if(authorization.email){
         return <Navigate to="/"/>
     }
 
