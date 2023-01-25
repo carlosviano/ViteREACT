@@ -1,10 +1,10 @@
 import './button.css'
 
-export default function Button({value}){
+export default function Button({value,disabled}){
 
     return(
         <>
-        <input type='submit' className='btn' value={value}/>
+        <input type='submit' disabled={disabled} className='btn' value={value}/>
         </>
     )
     }

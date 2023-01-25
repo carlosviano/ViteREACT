@@ -2,6 +2,7 @@ import Button from '../Button/button'
 import './Login.css'
 import {useState} from 'react';
 import { useLoginContext } from '../../contexts/LoginModeContext';
+import RegisterForm from '../Form/RegisterForm';
 
 
 export default function Login(){
@@ -82,7 +83,7 @@ export default function Login(){
         </form>
     </div>
             <div className='register'>
-            <form className='formRegister' onSubmit={registerAcc}>
+            {/* <form className='formRegister' onSubmit={registerAcc}>
                 <h5>Create Account</h5>
                 <div className='inputContainer'>
                     <h6>First Name</h6>
@@ -101,8 +102,8 @@ export default function Login(){
                     <input type='password' className='registerInput' name='password' value={newUser.password} onChange={handleRegisterInput}/>
                 </div>
                 <Button value='Create'/>
-            </form>
-
+            </form> */}
+            <RegisterForm/>
         </div></div>
 
     )

@@ -19,19 +19,18 @@ const ROLES = {
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<Layout />}/>
         <Route path="unauthorized" element={<Unauthorized />} />
         <Route index element={<Index />} />
-        <Route path="all" element={<All />} />
-        <Route path="about" element={<About />} />
-        <Route path="search" element={<Search />} />
-        <Route element={<PublicRoute />}>
+        {/* <Route element={<PublicRoute />}> */}
           <Route path="account" element={<Account />} />
-        </Route>
-        <Route element={<PrivateRoute allowedRoles={[ROLES.Admin]} />}>
+        {/* </Route> */}
+        {/* <Route element={<PrivateRoute allowedRoles={[ROLES.Admin]} />}> */}
           <Route path="cart" element={<Cart />} />
-        </Route>
-      </Route>
+          <Route path="all" element={<All />} />
+          <Route path="about" element={<About />} />
+          <Route path="search" element={<Search />} />
+      {/* </Route> */}
     </Routes>
   );
 }
