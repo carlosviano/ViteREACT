@@ -7,27 +7,30 @@ import { rightMenuLoggedIn } from "../../../const/rightMenuLoggedIn";
 import { leftMenuLoggedIn } from "../../../const/leftMenuLoggedIn";
 
 export default function Header() {
-  const { authorization } = useLoginContext();
+  const { authorization, logOutAcc } = useLoginContext();
+
   return (
     <div className="Menu">
       <div className="Menu-izquierda">
-        {authorization.role !== null ? leftMenuLoggedIn.map((leftMenuItem, index) => (
-          <Link
-            to={leftMenuItem.path}
-            className={leftMenuItem.className}
-            key={index}
-          >
-            {leftMenuItem.label}
-          </Link>
-        )) : leftMenu.map((leftMenuItem, index) => (
-          <Link
-            to={leftMenuItem.path}
-            className={leftMenuItem.className}
-            key={index}
-          >
-            {leftMenuItem.label}
-          </Link>
-        ))}
+        {authorization.role !== null
+          ? leftMenuLoggedIn.map((leftMenuItem, index) => (
+              <Link
+                to={leftMenuItem.path}
+                className={leftMenuItem.className}
+                key={index}
+              >
+                {leftMenuItem.label}
+              </Link>
+            ))
+          : leftMenu.map((leftMenuItem, index) => (
+              <Link
+                to={leftMenuItem.path}
+                className={leftMenuItem.className}
+                key={index}
+              >
+                {leftMenuItem.label}
+              </Link>
+            ))}
       </div>
       <div className="Menu-derecha">
         {authorization.role === null
@@ -41,15 +44,28 @@ export default function Header() {
                 <span>{rightMenuItem.number}</span>
               </Link>
             ))
-          : rightMenuLoggedIn.map((rightMenuLoggedInItem, index) => 
-          <Link
-          to={rightMenuLoggedInItem.path}
-          className={rightMenuLoggedInItem.className}
-          key={index}
-        >
-          {rightMenuLoggedInItem.label}
-          <span>{rightMenuLoggedInItem.number}</span>
-        </Link>)}
+          : rightMenuLoggedIn.map((rightMenuLoggedInItem, index) =>
+              rightMenuLoggedInItem.name === "LogOut" ? (
+                <Link
+                  to={rightMenuLoggedInItem.path}
+                  className={rightMenuLoggedInItem.className}
+                  key={index}
+                  onClick={logOutAcc}
+                >
+                  {rightMenuLoggedInItem.label}
+                  <span>{rightMenuLoggedInItem.number}</span>
+                </Link>
+              ) : (
+                <Link
+                  to={rightMenuLoggedInItem.path}
+                  className={rightMenuLoggedInItem.className}
+                  key={index}
+                >
+                  {rightMenuLoggedInItem.label}
+                  <span>{rightMenuLoggedInItem.number}</span>
+                </Link>
+              )
+            )}
       </div>
     </div>
   );

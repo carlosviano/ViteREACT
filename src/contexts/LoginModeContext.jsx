@@ -23,8 +23,7 @@ export function LoginContextProvider({children},newUserLogin){
     role: null,
    })
 
-   async function logInAcc(e,newUserLogin) {
-        e.preventDefault();
+   async function logInAcc(newUserLogin) {
        const response = await fetch('http://localhost:3000/user/login',{
             method: 'POST', 
             headers: {'Content-Type': 'application/json'},
