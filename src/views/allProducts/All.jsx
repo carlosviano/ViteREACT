@@ -7,6 +7,7 @@ import Button from "../../components/Button/button";
 import { useEffect } from "react";
 
 export default function All() {
+  const [productList, setProductList] = useState([]);
   useEffect(() => {
     async function getProducts() {
       const response = await fetch(
@@ -18,7 +19,9 @@ export default function All() {
       );
       if (response.status === 200) {
         const productos = await response.json();
+        setProductList(productos);
         console.log(productos);
+        console.log(productList);
       } else {
         alert("Ha habido un error al intentar mostrar los productos");
       }
@@ -28,14 +31,20 @@ export default function All() {
 
   return (
     <div className="allMainContainer">
-      <Card
-        i={image}
-        i2={image2}
-        altText={image}
-        title={"Single Stitched Monroe County Tee - 1990s"}
-        size={"Size: Large"}
-        price={"$55.00"}
-      />
+      {!productList ? (
+        <p>cargando productos</p>
+      ) : (
+        productList.map((productListItem, index) => (
+          <Card
+            i={`${productListItem.path}`}
+            altText={image}
+            title={productListItem.nombre}
+            size={`Size: ${productListItem.talla}`}
+            price={`$${productListItem.precio}`}
+            key={index}
+          />
+        ))
+      )}
     </div>
   );
 }
