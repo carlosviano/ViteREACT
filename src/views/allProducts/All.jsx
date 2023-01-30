@@ -1,9 +1,6 @@
 import Card from "../../components/Card/Card";
 import "./All.css";
-import image from "../../components/Card/images/hola.jpg";
-import image2 from "../../components/Card/images/adios.jpg";
 import { useState } from "react";
-import Button from "../../components/Button/button";
 import { useEffect } from "react";
 
 export default function All() {
@@ -20,8 +17,7 @@ export default function All() {
       if (response.status === 200) {
         const productos = await response.json();
         setProductList(productos);
-        console.log(productos);
-        console.log(productList);
+        console.log("esta es la response.json", productos);
       } else {
         alert("Ha habido un error al intentar mostrar los productos");
       }
@@ -36,8 +32,8 @@ export default function All() {
       ) : (
         productList.map((productListItem, index) => (
           <Card
-            i={`${productListItem.path}`}
-            altText={image}
+            i={` http://127.0.0.1:8080/${productListItem.path}`}
+            altText={productListItem.name}
             title={productListItem.nombre}
             size={`Size: ${productListItem.talla}`}
             price={`$${productListItem.precio}`}
