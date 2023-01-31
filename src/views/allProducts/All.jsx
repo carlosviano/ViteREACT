@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 export default function All() {
-  const [productList, setProductList] = useState([]);
+  const [productList, setProductList] = useState(null);
   useEffect(() => {
     async function getProducts() {
       const response = await fetch(
@@ -32,7 +32,8 @@ export default function All() {
       ) : (
         productList.map((productListItem, index) => (
           <Card
-            i={` http://127.0.0.1:8080/${productListItem.path}`}
+            i={` http://localhost:3000/${productListItem.imagenes[0]}`}
+            i2={` http://localhost:3000/${productListItem.imagenes[1]}`}
             altText={productListItem.name}
             title={productListItem.nombre}
             size={`Size: ${productListItem.talla}`}
