@@ -39,6 +39,7 @@ export default function All() {
             size={`Size: ${productListItem.talla}`}
             price={`$${productListItem.precio}`}
             key={index}
+            link={`/${productListItem.referencia}`}
           />
         ))
       )}

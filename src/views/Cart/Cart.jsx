@@ -1,5 +1,6 @@
 import Button from "../../components/Button/button";
 import "./Cart.css";
+import CartCard from "../../components/CartCard/CartCard";
 
 export default function Cart() {
   return (
@@ -12,72 +13,7 @@ export default function Cart() {
           <h5>Your cart is currently empty</h5>
         </div>
       </div>
-      <div className="cartProductContainer">
-        <div className="cartHeadings">
-          <h5>Product</h5>
-          <h5>Price</h5>
-          <h5>Quantity</h5>
-          <h5>Total</h5>
-        </div>
-        <div className="cartProductDetails">
-          <div className="cartImageNameGroup">
-            <div className="cartProductImage">
-              <img
-                alt="Imagen"
-                src="https://cdn.shopify.com/s/files/1/0286/5954/8213/products/satan-1.jpg?v=1575937493"
-              />
-            </div>
-            <div className="cartProductName">
-              <h6>Black shirt</h6>
-            </div>
-          </div>
-          <div className="cartMiddleGroup">
-            <div className="cartProductPrice">
-              <h6>59.00$</h6>
-            </div>
-            <div className="cartProductQuantity">
-              <h6>1</h6>
-            </div>
-          </div>
-          <div className="totalGroup">
-            <div className="cartProductTotal">
-              <h6>59.00$</h6>
-            </div>
-            <div className="cartProductRemove">
-              <h6>X</h6>
-            </div>
-          </div>
-        </div>
-        <div className="cartProductDetails">
-          <div className="cartImageNameGroup">
-            <div className="cartProductImage">
-              <img
-                alt="Imagen"
-                src="https://cdn.shopify.com/s/files/1/0286/5954/8213/products/vintage_unsound-13copy_720x.jpg?v=1672947714"
-              />
-            </div>
-            <div className="cartProductName">
-              <h6>Black Pants</h6>
-            </div>
-          </div>
-          <div className="cartMiddleGroup">
-            <div className="cartProductPrice">
-              <h6>59.00$</h6>
-            </div>
-            <div className="cartProductQuantity">
-              <h6>1</h6>
-            </div>
-          </div>
-          <div className="totalGroup">
-            <div className="cartProductTotal">
-              <h6>59.00$</h6>
-            </div>
-            <div className="cartProductRemove">
-              <h6>X</h6>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CartCard />
       <div className="cartCheckoutContainer">
         <div className="cartCheckoutContent">
           <div className="checkoutTitle">
